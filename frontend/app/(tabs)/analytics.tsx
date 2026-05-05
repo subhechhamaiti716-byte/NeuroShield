@@ -15,7 +15,7 @@ export default function AnalyticsScreen() {
 
   useFocusEffect(
     React.useCallback(() => {
-      axios.get(`http://10.110.159.61:8080/analytics/${Store.userEmail}`).then(res => setData(res.data)).catch(console.error);
+      axios.get(`https://neuroshield-api-8jg5.onrender.com/analytics/${Store.userEmail}`).then(res => setData(res.data)).catch(console.error);
     }, [])
   );
 

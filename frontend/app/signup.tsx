@@ -22,7 +22,7 @@ export default function SignupScreen() {
       return;
     }
     try {
-      const res = await axios.post('http://10.110.159.61:8080/signup', { 
+      const res = await axios.post('https://neuroshield-api-8jg5.onrender.com/signup', { 
         name, 
         email, 
         phone, 

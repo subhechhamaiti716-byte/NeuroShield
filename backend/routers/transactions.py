@@ -48,7 +48,7 @@ async def upload_receipt(file: UploadFile = File(...)):
     with open(file_location, "wb+") as file_object:
         shutil.copyfileobj(file.file, file_object)
         
-    return {"receipt_url": f"http://10.110.159.61:8080/static/{unique_filename}"}
+    return {"receipt_url": f"https://neuroshield-api-8jg5.onrender.com/static/{unique_filename}"}
 
 @router.post("/transaction/check")
 async def check_transaction(transaction: Transaction):

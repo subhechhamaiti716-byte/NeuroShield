@@ -81,13 +81,13 @@ export default function AddTransactionScreen() {
           name: 'receipt.jpg',
           type: 'image/jpeg',
         } as any);
-        const uploadRes = await axios.post('http://10.110.159.61:8080/upload-receipt', formData, {
+        const uploadRes = await axios.post('https://neuroshield-api-8jg5.onrender.com/upload-receipt', formData, {
           headers: { 'Content-Type': 'multipart/form-data' }
         });
         finalReceiptUrl = uploadRes.data.receipt_url;
       }
 
-      const response = await axios.post('http://10.110.159.61:8080/transaction/check', {
+      const response = await axios.post('https://neuroshield-api-8jg5.onrender.com/transaction/check', {
         amount: parseFloat(amount),
         type: txType,
         category: category || "General",

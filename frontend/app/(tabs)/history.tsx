@@ -21,7 +21,7 @@ export default function HistoryScreen() {
     try {
       if (!reset) setLoadingMore(true);
       const skip = reset ? 0 : page * limit;
-      const res = await axios.get(`http://10.110.159.61:8080/transactions/${Store.userEmail}?skip=${skip}&limit=${limit}`);
+      const res = await axios.get(`https://neuroshield-api-8jg5.onrender.com/transactions/${Store.userEmail}?skip=${skip}&limit=${limit}`);
       
       if (reset) {
         setTransactions(res.data.transactions);
@@ -46,7 +46,7 @@ export default function HistoryScreen() {
 
   const resolveTx = async (id, isSafe) => {
     try {
-      await axios.post(`http://10.110.159.61:8080/transaction/resolve?tx_id=${id}&is_safe=${isSafe}`);
+      await axios.post(`https://neuroshield-api-8jg5.onrender.com/transaction/resolve?tx_id=${id}&is_safe=${isSafe}`);
       fetchHistory(true);
     } catch(e) {}
   }

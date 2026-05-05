@@ -14,7 +14,7 @@ export default function LoginScreen() {
 
   const handleLogin = async () => {
     try {
-      const res = await axios.post('http://10.110.159.61:8080/login', { email, password });
+      const res = await axios.post('https://neuroshield-api-8jg5.onrender.com/login', { email, password });
       if (res.data.status === 'success') {
         Store.userEmail = email;
         router.replace('/(tabs)');

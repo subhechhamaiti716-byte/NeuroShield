@@ -16,7 +16,7 @@ export default function DashboardScreen() {
 
   const fetchDashboard = async () => {
     try {
-      const res = await axios.get(`http://10.110.159.61:8080/dashboard/${Store.userEmail}`);
+      const res = await axios.get(`https://neuroshield-api-8jg5.onrender.com/dashboard/${Store.userEmail}`);
       setDashboardData(res.data);
     } catch (e) {
       console.error('Failed to fetch dashboard', e);
