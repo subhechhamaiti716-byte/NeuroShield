@@ -20,5 +20,5 @@ class Transaction(BaseModel):
     lon: float = 0.0
     category: str = "General"
     notes: str = ""
-    receipt_url: str = None
+    receipt_url: str | None = None
     user_email: str = "test@test.com"
