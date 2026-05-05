@@ -1,6 +1,7 @@
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
+from prometheus_fastapi_instrumentator import Instrumentator
 
 from socket_manager import manager
 from routers import auth, transactions, analytics
@@ -17,6 +18,8 @@ logger.info("Initializing NeuroShield API Server...")
 
 app = FastAPI(title="NeuroShield API")
 
+# Add APM / Metrics Monitoring
+Instrumentator().instrument(app).expose(app)
 app.mount("/static", StaticFiles(directory="uploads"), name="static")
 
 app.add_middleware(
