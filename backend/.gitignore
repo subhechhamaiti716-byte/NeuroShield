@@ -1,0 +1,6 @@
+venv/
+__pycache__/
+*.pyc
+neuroshield.db
+neuroshield.log
+uploads/
